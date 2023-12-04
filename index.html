@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="margin: 0; padding: 0;">
     <section class="view m-0 p-0">
         <!-- Bootstrap container for responsive alignment -->
-        <div class="container my-5">
+        <div class="container-fluid my-5">
             <!-- Bootstrap row for horizontal grouping -->
             <div class="row justify-content-center">
                 <!-- Column size definitions for various screen sizes -->
-                <div class="col-lg-6 col-md-8">
+                <div class="col-12">
                     <!-- Hidden message div, likely for dynamic display through JavaScript -->
                     <div class="row justify-content-center" id="msg-div" style="display: none;">
                         <div class="col-12">
@@ -382,7 +382,7 @@
     <!-- Modal -->
 <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
+      <div class="modal-content"  style="z-index: 1050;">
         <div class="modal-header">
           <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
