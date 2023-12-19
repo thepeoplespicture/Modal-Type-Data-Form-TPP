@@ -1,4 +1,4 @@
-<html lang="en">
+"<html lang="en">
 
 <head>
     <!-- Charset for character encoding, viewport settings for responsive design -->
@@ -30,10 +30,106 @@
                 /* Adjust this value as needed */
             }
         }
+
+        /* Background Colors */
+        body,
+        .form-section {
+            background-color: #e8e8e5;
+        }
+
+        .modal-content,
+        .alert {
+            background-color: #FFFFFF;
+        }
+
+        /* Link and Button Colors */
+        a {
+            color: #007bff;
+            /* primary link color */
+        }
+
+        .btn-primary {
+            background-color: #2ea3f2;
+            color: #FFFFFF;
+        }
+
+        .btn-secondary {
+            background-color: #3dad4b;
+            color: #FFFFFF;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Lato', Helvetica, Arial, Lucida, Sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-family: 'Lato', Helvetica, Arial, Lucida, Sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-family: Roboto, sans-serif;
+            font-weight: 300;
+            color: #474747;
+            font-size: 1rem;
+        }
+
+        /* Accordion Header */
+        .accordion-header {
+            background-color: #e8e8e5;
+            font-family: 'Lato', Helvetica, Arial, Lucida, Sans-serif;
+            font-weight: 600;
+        }
+
+        /* Accordion Body */
+        .accordion-body {
+            background-color: #FFFFFF;
+            font-family: Roboto, sans-serif;
+            font-weight: 300;
+        }
+
+        /* Accordion Toggle Button */
+        .accordion-button {
+            color: #dd003b;
+            /* primary link color */
+            font-weight: 600;
+        }
+
+        /* Accordion Content */
+        .accordion-content {
+            color: #474747;
+            /* paragraph color */
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.65;
+            /* Muted appearance for disabled state */
+            cursor: not-allowed;
+            /* Change cursor to indicate the button is disabled */
+        }
+
+        .btn-primary:not(:disabled) {
+            opacity: 1;
+            /* Fully opaque for enabled state */
+            cursor: pointer;
+            /* Change cursor to indicate the button is clickable */
+            box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+            /* Optional: Add a glow effect to draw attention */
+        }
+
+        label {
+            font-family: 'Lato', Helvetica, Arial, Lucida, Sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+        }
     </style>
 </head>
 
-<body style="margin: 0; padding: 0;">
+<body>
     <section class="view m-0 p-0">
         <!-- Bootstrap container for responsive alignment -->
         <div class="container-fluid my-0">
@@ -49,33 +145,24 @@
                     </div>
 
                     <!-- Form element with POST method and multipart/form-data for file uploads -->
-                    <form method="post" class="card p-4 shadow-sm" action="" enctype="multipart/form-data"
+                    <form method="post" class="card rounded-lg p-4 shadow-sm" action="" enctype="multipart/form-data"
                         name="frm_new" id="frm_new">
                         <!-- Hidden input fields, probably used for data processing or validation -->
                         <input type="hidden" name="n8qe4" id="n8qe4" value="469628e5e1771f454b5b59bcad5460486539e7fa" />
 
                         <!-- Name input field -->
-                        <div class="form-group">
+                        <div class="form-group mb-3 m-2">
                             <i class="d-none fas fa-user prefix"></i> <!-- Hidden icon -->
                             <label for="cname">Name</label>
                             <input type="text" name="cname" id="cname" class="form-control" required>
                         </div>
-
                         <!-- Email input field -->
-                        <div class="form-group">
+                        <div class="form-group mb-4 m-2">
                             <i class="d-none fas fa-envelope prefix"></i> <!-- Hidden icon -->
                             <label for="cemail">Email Address</label>
                             <input type="email" name="cemail" id="cemail" class="form-control" required>
                         </div>
 
-                        <!-- Photo upload field -->
-                        <div class="form-group">
-                            <!-- File input for photo upload -->
-                            <input type="file" name="cphoto[]" id="cphoto" class="form-control-file" multiple
-                                accept="image/*" required>
-                            <label for="cphoto">Select your photos</label>
-                            </label>
-                        </div>
 
                         <!-- Image Preview -->
                         <div id="cphoto_div" style="display:none;">
@@ -84,7 +171,7 @@
                         </div>
 
                         <!-- Story textarea (Collapsible) -->
-                        <div class="form-group">
+                        <div class="form-group mb-4 text-center">
                             <button class="btn btn-link p-0" type="button" data-toggle="collapse"
                                 data-target="#storyCollapse" aria-expanded="false" aria-controls="storyCollapse"
                                 style="text-decoration: underline; color: #007bff; font-size: inherit;">
@@ -97,10 +184,12 @@
                         </div>
 
                         <!-- Terms and Conditions Link -->
-                        <a href="#" data-toggle="modal" data-target="#termsModal">View Terms and Conditions</a>
+                        <div class="mb-2 text-center">
+                            <a href="#" data-toggle="modal" data-target="#termsModal">View Terms and Conditions</a>
+                        </div>
 
                         <!-- Dummy Checkbox Overlay -->
-                        <div class="form-group form-check">
+                        <div class="form-group form-check mb-2 m-2">
                             <div id="dummy-checkbox-overlay" style="position: relative; cursor: not-allowed;">
                                 <!-- Actual Checkbox (initially hidden) -->
                                 <input type="checkbox" class="form-check-input" id="c18" name="c18" required disabled
@@ -114,21 +203,34 @@
                         </div>
 
                         <!-- Newsletter Subscription (Optional) -->
-                        <div class="form-group form-check">
+                        <div class="form-group form-check m-2">
                             <input type="checkbox" class="form-check-input" id="cremails" name="cremails">
                             <label class="form-check-label" for="cremails">Subscribe to The People's Picture newsletter
                                 (Optional)</label>
                         </div>
 
-
-                        <!-- Dummy Submit Button Overlay -->
-                        <div class="text-center">
-                            <div id="dummy-submit-overlay"
-                                style="position: relative; display: inline-block; cursor: not-allowed;">
-                                <!-- Actual Submit Button (initially hidden) -->
-                                <button type="submit" class="btn btn-primary" disabled
-                                    style="display: none;">Submit</button>
-                                <button class="btn btn-primary btn-lg" style="opacity: 0.65;">Submit</button>
+                        <div class="form-footer mx-4 my-2">
+                            <div class="row mb-0">
+                                <!-- Photo upload field -->
+                                <div class="col-8">
+                                    <div class="custom-file-upload text-center">
+                                        <input type="file" id="cphoto" name="cphoto[]" class="form-control-file"
+                                            multiple accept="image/*" hidden>
+                                        <label for="cphoto" class="btn btn-secondary px-2">Upload Images</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div>
+                                        <div id="dummy-submit-overlay"
+                                            style="position: relative; display: inline-block; cursor: not-allowed;">
+                                            <!-- Actual Submit Button (initially hidden) -->
+                                            <button type="submit" class="btn btn-primary px-4 btn-md" disabled
+                                                style="display: none;">Submit</button>
+                                            <button class="btn btn-primary px-2 btn-md"
+                                                style="opacity: 0.65;">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -144,7 +246,7 @@
 
                                 // Initially disable terms checkbox and submit button
                                 termsCheckbox.prop('disabled', true);
-                                submitButton.prop('disabled', true);
+                                $('button[type="submit"]').hide();
 
                                 // Event listener for the "Close" button in the Terms and Conditions modal
                                 $('#closeTermsButton').click(function () {
@@ -156,6 +258,18 @@
                                 $('#dummy-submit-overlay').click(function () {
                                     $('#alarmTipsModal .modal-body').html('Make sure to agree to the terms and conditions and fill in all required fields before submitting.');
                                     $('#alarmTipsModal').modal('show');
+                                });
+
+                                // Event listener for it the essential fields are filled in
+                                $('#cname, #cemail, #cphoto').change(function () {
+                                    if ($('#cname').val() != '' && $('#cemail').val() != '' && $('#cphoto').val() !=
+                                        '') {
+                                        $('#dummy-submit-overlay button').prop('disabled', false).hide();
+                                        $('button[type="submit"]').show();
+                                    } else {
+                                        $('#dummy-submit-overlay button').prop('disabled', true).show();
+                                        $('button[type="submit"]').hide();
+                                    }
                                 });
 
                                 // Handle change in terms checkbox
@@ -429,4 +543,4 @@
     </div>
 </body>
 
-</html>
+</html>"
